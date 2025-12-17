@@ -1,1 +1,465 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Hong - Pakawat Anekwiroj</title><link href="/static/css/main.31c086a0.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(e){function t(t){for(var n,a,l=t[0],p=t[1],i=t[2],c=0,s=[];c<l.length;c++)a=l[c],Object.prototype.hasOwnProperty.call(o,a)&&o[a]&&s.push(o[a][0]),o[a]=0;for(n in p)Object.prototype.hasOwnProperty.call(p,n)&&(e[n]=p[n]);for(f&&f(t);s.length;)s.shift()();return u.push.apply(u,i||[]),r()}function r(){for(var e,t=0;t<u.length;t++){for(var r=u[t],n=!0,l=1;l<r.length;l++){var p=r[l];0!==o[p]&&(n=!1)}n&&(u.splice(t--,1),e=a(a.s=r[0]))}return e}var n={},o={1:0},u=[];function a(t){if(n[t])return n[t].exports;var r=n[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,a),r.l=!0,r.exports}a.m=e,a.c=n,a.d=function(e,t,r){a.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,t){if(1&t&&(e=a(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(a.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)a.d(r,n,function(t){return e[t]}.bind(null,n));return r},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(t,"a",t),t},a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},a.p="/";var l=this.webpackJsonppakawatspotlight=this.webpackJsonppakawatspotlight||[],p=l.push.bind(l);l.push=t,l=l.slice();for(var i=0;i<l.length;i++)t(l[i]);var f=p;r()}([])</script><script src="/static/js/2.571e4c00.chunk.js"></script><script src="/static/js/main.2d302b9e.chunk.js"></script></body></html>
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Developer Portfolio</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eead2b",
+                        "primary-light": "#fdf7e8", // Very light version for backgrounds
+                        "background-light": "#ffffff",
+                        "background-off-white": "#fcfbf9",
+                        "background-dark": "#221c10",
+                        "text-main": "#181611",
+                        "text-sub": "#897c61",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "mono": ["Fira Code", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 8px 30px rgba(0,0,0,0.04)",
+                        "hover": "0 20px 40px rgba(238, 173, 43, 0.15)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e0e0e0;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cdcdcd;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Bounce hover effect for buttons */
+        .btn-bounce {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-bounce:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-text-main font-display antialiased">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Navigation -->
+        <div class="sticky top-4 z-50 flex justify-center px-4">
+            <nav
+                class="flex w-full max-w-[960px] items-center justify-between rounded-full bg-white/90 px-6 py-3 shadow-soft backdrop-blur-md border border-gray-100">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+                    <span class="font-bold text-lg tracking-tight">HSpotlight</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#about">About</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#writing">Writing</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#courses">Courses</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+                </div>
+                <a class="hidden sm:flex btn-bounce items-center justify-center rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-text-main shadow-sm hover:shadow-hover"
+                    href="#contact">
+                    Let's Talk
+                </a>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 text-text-main">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </nav>
+        </div>
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="flex flex-1 flex-col items-center">
+                <!-- Hero Section -->
+                <section class="w-full max-w-[960px] px-4 py-12 md:py-20 lg:py-28">
+                    <div class="@container">
+                        <div class="flex flex-col-reverse gap-8 md:flex-row md:items-center md:gap-12">
+                            <div class="flex flex-1 flex-col gap-6 items-start">
+                                <!-- <div
+                                    class="inline-flex items-center gap-2 rounded-full bg-primary-light px-3 py-1 text-xs font-bold text-primary border border-primary/20">
+                                    <span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+                                    Available for projects
+                                </div> -->
+                                <h1
+                                    class="text-4xl font-black leading-tight tracking-tight md:text-6xl lg:leading-[1.1]">
+                                    Building software <br class="hidden md:block" />&amp; a better self.
+                                </h1>
+                                <p class="text-lg text-text-sub md:text-xl leading-relaxed max-w-lg">
+                                    Hi, I'm a developer exploring the intersection of code, philosophy, and personal
+                                    growth. Welcome to my digital garden. 🌿
+                                </p>
+                                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-2">
+                                    <a class="btn-bounce flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-base font-bold text-text-main shadow-lg shadow-primary/20"
+                                        href="#writing">
+                                        Read my thoughts
+                                    </a>
+                                    <a class="btn-bounce flex items-center justify-center rounded-full bg-white border border-gray-200 px-8 py-3.5 text-base font-bold text-text-main hover:bg-gray-50"
+                                        href="#courses">
+                                        View Courses
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-[400px] flex justify-center md:justify-end">
+                                <div
+                                    class="relative aspect-square w-full max-w-[360px] overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-soft rotate-3 hover:rotate-0 transition-all duration-500">
+                                    <img alt="A developer's desk setup with code on screen and warm lighting"
+                                        class="h-full w-full object-cover"
+                                        data-alt="A developer's desk setup with code on screen and warm lighting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUSLAEmk6-V68qixLXt0zYhFE83jkRq-RL1_SMDnGaTiP33YoqAbFPenijhQfSVshOgH3xx2R6GXOEZ4eLw-1TY7tR9vekJ0Zb6lxq6K6_7TQeOUYjOfeVH41reXIhnAz9SexIigXlIx-O7auNT4Fx3X_dedcaA4fb72QGUyM7YbwNU7AKwixs1Hts8k4Fwnkb_RaAiWABBBFh0SG3TsfHiPXAK5FOjj4jNHkVWRcB0fcBL0jKz7rFZoU2GsqQlt2oDAsnyNA7Vqs" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- About Section -->
+                <section class="w-full bg-background-off-white py-16" id="about">
+                    <div class="mx-auto flex max-w-[960px] flex-col px-4">
+                        <div class="mb-10 flex flex-col gap-3 text-center md:text-left">
+                            <h2 class="text-3xl font-black tracking-tight md:text-4xl">Who I Am</h2>
+                            <p class="max-w-2xl text-lg text-text-sub leading-relaxed mx-auto md:mx-0">
+                                I'm a software engineer who believes that writing good code starts with clear thinking.
+                                I blend technical expertise with life philosophy to create meaningful digital
+                                experiences.
+                            </p>
+                        </div>
+                        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            <!-- Card 1 -->
+                            <div
+                                class="group flex flex-col gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-soft hover:-translate-y-1">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-full bg-primary-light text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">code</span>
+                                </div>
+                                <div>
+                                    <h3 class="mb-2 text-lg font-bold">Technologist</h3>
+                                    <p class="text-sm text-text-sub">Expert in React, Node, and Python. Building
+                                        scalable web applications with a focus on UX.</p>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div
+                                class="group flex flex-col gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-soft hover:-translate-y-1">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-full bg-primary-light text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">menu_book</span>
+                                </div>
+                                <div>
+                                    <h3 class="mb-2 text-lg font-bold">Stoic Thinker</h3>
+                                    <p class="text-sm text-text-sub">Applying ancient wisdom to modern problems. Finding
+                                        calm in the chaos of tech.</p>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div
+                                class="group flex flex-col gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all hover:shadow-soft hover:-translate-y-1">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-full bg-primary-light text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">spa</span>
+                                </div>
+                                <div>
+                                    <h3 class="mb-2 text-lg font-bold">Lifelong Learner</h3>
+                                    <p class="text-sm text-text-sub">Always reading, always growing. Sharing what I
+                                        learn through writing and courses.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Writing Showcase -->
+                <section class="w-full py-20" id="writing">
+                    <div class="mx-auto flex max-w-[960px] flex-col px-4">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
+                            <div>
+                                <h2 class="text-3xl font-black tracking-tight md:text-4xl mb-2">Latest Writing</h2>
+                                <p class="text-text-sub">Thoughts on code, career, and life.</p>
+                            </div>
+                            </button>
+                        </div>
+                        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                            <!-- Article 1 -->
+                            <article
+                                class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-gray-100 transition-all hover:shadow-lg hover:ring-primary/20">
+                                <div class="relative h-48 w-full overflow-hidden">
+                                    <img alt="Top down view of a laptop, notebook and coffee on a white desk"
+                                        class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                        data-alt="Top down view of a laptop, notebook and coffee on a white desk"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPImi5tYeSoksBbi-OfRcNUxRWayij2yQaqJhtbEYhZxdhAg1ce4RRjfqE7jK1J6Zr2cIqZIRBQ_wxn5GkpM5_2ZNdFgg5joDz5VHPv-Gv7nbvjmswtdEKv2Ck0MWfFp_N_pwveudftqLZL8RH02jLfQJvDZIdBQY2Z9ChiuHk0T15dRGMptu5SxIL5YERxEPeHbf95vaHKSwsGXurxcgQ9NsiGHNqgyNPMKNdydcB2NxAp1cfXlj33QZGARSSJl1L091MvK6se7I" />
+                                </div>
+                                <div class="flex flex-1 flex-col p-6">
+                                    <div class="mb-3 flex gap-2">
+                                        <span
+                                            class="rounded-full bg-blue-50 px-2.5 py-0.5 font-mono text-xs font-medium text-blue-600">Tech</span>
+                                        <span
+                                            class="rounded-full bg-gray-50 px-2.5 py-0.5 font-mono text-xs font-medium text-gray-600">React</span>
+                                    </div>
+                                    <h3 class="mb-2 text-xl font-bold leading-tight">Mastering State Management in 2025
+                                    </h3>
+                                    <p class="mb-6 flex-1 text-sm text-text-sub line-clamp-3">
+                                        Why you might not need that complex library anymore. A deep dive into modern
+                                        React hooks and context patterns.
+                                    </p>
+                                    <button
+                                        class="w-full rounded-full bg-gray-50 px-4 py-2.5 text-sm font-bold text-text-main hover:bg-primary hover:text-white transition-colors">
+                                        Read Article
+                                    </button>
+                                </div>
+                            </article>
+                            <!-- Article 2 -->
+                            <article
+                                class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-gray-100 transition-all hover:shadow-lg hover:ring-primary/20">
+                                <div class="relative h-48 w-full overflow-hidden">
+                                    <img alt="Peaceful minimalist nature landscape with mountains"
+                                        class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                        data-alt="Peaceful minimalist nature landscape with mountains"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsAc5cEGXiM4A9XQ7mOEm04ULIAL91AZQZRFed6OpVh_SxPaRQ7_JCNBN8fSCPydHgz2dowTSuk_nWR7CKw3soqHQbPFJvx00ompAXwFzw18xJaGYABhdcI0aBuYS9iePyWj-GsFCWh9a_7SQnwuQJnlM5gxHOOa6Vxt0ZkAO0oQPgZ9iE4shSBtMh7HpydPV1HsylMVJMke8nGi1jFkKUssL69x4Ch-wvzz7B6BsQjI9-HB0eGtKPYst1NdZcvPMb26_tVtx6gUk" />
+                                </div>
+                                <div class="flex flex-1 flex-col p-6">
+                                    <div class="mb-3 flex gap-2">
+                                        <span
+                                            class="rounded-full bg-green-50 px-2.5 py-0.5 font-mono text-xs font-medium text-green-600">Life</span>
+                                        <span
+                                            class="rounded-full bg-gray-50 px-2.5 py-0.5 font-mono text-xs font-medium text-gray-600">Stoicism</span>
+                                    </div>
+                                    <h3 class="mb-2 text-xl font-bold leading-tight">Stoicism for Software Engineers
+                                    </h3>
+                                    <p class="mb-6 flex-1 text-sm text-text-sub line-clamp-3">
+                                        How ancient philosophy helps you handle bugs, deadlines, and difficult code
+                                        reviews with grace.
+                                    </p>
+                                    <button
+                                        class="w-full rounded-full bg-gray-50 px-4 py-2.5 text-sm font-bold text-text-main hover:bg-primary hover:text-white transition-colors">
+                                        Read Article
+                                    </button>
+                                </div>
+                            </article>
+                            <!-- Article 3 -->
+                            <article
+                                class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-gray-100 transition-all hover:shadow-lg hover:ring-primary/20">
+                                <div class="relative h-48 w-full overflow-hidden">
+                                    <img alt="Coding screen with vibrant syntax highlighting"
+                                        class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                                        data-alt="Coding screen with vibrant syntax highlighting"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_CGWiJWeuiX7eSzLLXbjmQ42qu5oQpmDmCUXcrQcfuUY_z9fsTcX3QPF2TL7LzK0hVLDC1FCWsAYbmRFnJuVjidS4g3owiIvnvz-QitgYES19RUd3YhZqe5sWlJ7qNtTjEwu63EZrqO4iVS5raczNc2-ntwpI37LT7J3mZ9OGo1uV-bhj6XYvQn2JPe9uzJuAU7TuBfkDIvmZ4iBOZzPW05md4muXhh_BYHPhd44_olFF9A2SP8eGyPdQvLhO48q4f9lpKppNioA" />
+                                </div>
+                                <div class="flex flex-1 flex-col p-6">
+                                    <div class="mb-3 flex gap-2">
+                                        <span
+                                            class="rounded-full bg-purple-50 px-2.5 py-0.5 font-mono text-xs font-medium text-purple-600">Career</span>
+                                    </div>
+                                    <h3 class="mb-2 text-xl font-bold leading-tight">The Senior Engineer Mindset</h3>
+                                    <p class="mb-6 flex-1 text-sm text-text-sub line-clamp-3">
+                                        It's not just about code. It's about ownership, mentorship, and making the right
+                                        trade-offs.
+                                    </p>
+                                    <button
+                                        class="w-full rounded-full bg-gray-50 px-4 py-2.5 text-sm font-bold text-text-main hover:bg-primary hover:text-white transition-colors">
+                                        Read Article
+                                    </button>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="mt-8 flex justify-center sm:hidden">
+                            <button
+                                class="inline-flex items-center gap-1 font-bold text-primary hover:text-orange-600 transition-colors">
+                                View all posts <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Courses Section -->
+                <section class="w-full bg-background-off-white py-20 relative overflow-hidden" id="courses">
+                    <!-- Decorative blob -->
+                    <div class="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-primary/5 blur-3xl"></div>
+                    <div class="mx-auto flex max-w-[960px] flex-col px-4 relative z-10">
+                        <div class="mb-10 text-center">
+                            <h2 class="text-3xl font-black tracking-tight md:text-4xl mb-3">Learn with Me</h2>
+                            <p class="text-text-sub max-w-xl mx-auto">Interactive courses and mentorship programs
+                                designed to take your skills to the next level.</p>
+                        </div>
+                        <div class="grid gap-6 md:grid-cols-2">
+                            <!-- Course 1 -->
+                            <div
+                                class="flex flex-col sm:flex-row overflow-hidden rounded-3xl bg-white p-2 shadow-sm ring-1 ring-gray-100">
+                                <div class="h-48 sm:h-auto sm:w-48 shrink-0 overflow-hidden rounded-2xl bg-gray-100">
+                                    <img alt="Group of people working together around a table"
+                                        class="h-full w-full object-cover"
+                                        data-alt="Group of people working together around a table"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjfMlXstpjtuOIUqg8v8q8PbfDJiiY7tGyisSVbtDGDk1k6uk6szvkkb5bwOtAMsQWTC2FNsWMSj1PpRFAanSevD7RqFEmKXbwsyKQLb3SdFAZZKzzdVs10yCvKKfKJ7ynVlt7BV8zAgAZtfxIIojTSugHv3M1sV1f8KzQn6Eg1gAnININbw4BMZ6pr7d-YqCrC-eFGhHtgimNXlEMdADxOtYoOiwcGydlWhc8agb6baICROSu69zyCrSupDjTxBfdYC1UQiBBPG4" />
+                                </div>
+                                <div class="flex flex-1 flex-col justify-between p-4 sm:p-6">
+                                    <div>
+                                        <h3 class="text-xl font-bold">Junior to Senior</h3>
+                                        <p class="mt-2 text-sm text-text-sub">A comprehensive mentorship path to
+                                            accelerate your career growth in 6 months.</p>
+                                    </div>
+                                    <div class="mt-6 flex items-center justify-between">
+                                        <span class="font-mono text-sm font-bold text-text-main">Open Enrollment</span>
+                                        <button
+                                            class="btn-bounce rounded-full bg-primary px-5 py-2 text-sm font-bold text-text-main">
+                                            Talk to Me
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Course 2 -->
+                            <div
+                                class="flex flex-col sm:flex-row overflow-hidden rounded-3xl bg-white p-2 shadow-sm ring-1 ring-gray-100">
+                                <div class="h-48 sm:h-auto sm:w-48 shrink-0 overflow-hidden rounded-2xl bg-gray-100">
+                                    <img alt="Laptop showing code editor and digital garden concept"
+                                        class="h-full w-full object-cover"
+                                        data-alt="Laptop showing code editor and digital garden concept"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBtJHWNtZJibYxBq9DIgnI2Qfri_VrXcpNlg9IvrRj9Uewx0wTss5WiE75tXr_D1Klv-xo2hRZcXceiKehVsfTxp-6V-AFzSwkMFLaAQWA8hUa1P5_FAcylULEw53G6lZFWnguTbLoiq8ra5K6Vt45g9n6jNUTpteUBUx4rCiUW9Bpcg4Lgul8jmZynBOZdk0ha_35oflZixEqdjoshPJD6gfULu8N4avnldHvkWIDrG4j-706l0QohJthPmDZK-RAl0VPCKuUQa8" />
+                                </div>
+                                <div class="flex flex-1 flex-col justify-between p-4 sm:p-6">
+                                    <div>
+                                        <h3 class="text-xl font-bold">The Digital Garden</h3>
+                                        <p class="mt-2 text-sm text-text-sub">Learn how to build, maintain, and grow
+                                            your own personal knowledge base.</p>
+                                    </div>
+                                    <div class="mt-6 flex items-center justify-between">
+                                        <span class="font-mono text-sm font-bold text-text-main">Self-Paced</span>
+                                        <button
+                                            class="btn-bounce rounded-full bg-primary px-5 py-2 text-sm font-bold text-text-main">
+                                            Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10 flex justify-center">
+                        </div>
+                    </div>
+                </section>
+                <!-- Contact Section -->
+                <section class="w-full py-20" id="contact">
+                    <div class="mx-auto max-w-[960px] px-4">
+                        <div class="rounded-3xl bg-primary-light p-8 md:p-12 relative overflow-hidden">
+                            <!-- Decorative pattern -->
+                            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+                                style="background-image: radial-gradient(#eead2b 1px, transparent 1px); background-size: 20px 20px;">
+                            </div>
+                            <div class="relative z-10 flex flex-col md:flex-row gap-12">
+                                <div class="flex-1">
+                                    <h2 class="text-3xl font-black tracking-tight md:text-4xl mb-4">Let's build
+                                        something together</h2>
+                                    <p class="text-lg text-text-sub mb-8">
+                                        Have a project in mind? Or just want to chat about tech and philosophy? Drop me
+                                        a message.
+                                    </p>
+                                    <div class="flex flex-col gap-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary">
+                                                <span class="material-symbols-outlined">mail</span>
+                                            </div>
+                                            <span class="font-medium">admin@hspotlight.dev</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary">
+                                                <span class="material-symbols-outlined">map</span>
+                                            </div>
+                                            <span class="font-medium">Bangkok, Thailand</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-1 rounded-2xl bg-white p-6 shadow-sm">
+                                    <form class="flex flex-col gap-4">
+                                        <div class="flex flex-col gap-1">
+                                            <label class="text-xs font-bold uppercase tracking-wider text-text-sub"
+                                                for="name">Name</label>
+                                            <input
+                                                class="w-full rounded-xl border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:border-primary focus:ring-primary"
+                                                id="name" placeholder="Your name" type="text" />
+                                        </div>
+                                        <div class="flex flex-col gap-1">
+                                            <label class="text-xs font-bold uppercase tracking-wider text-text-sub"
+                                                for="email">Email</label>
+                                            <input
+                                                class="w-full rounded-xl border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:border-primary focus:ring-primary"
+                                                id="email" placeholder="you@example.com" type="email" />
+                                        </div>
+                                        <div class="flex flex-col gap-1">
+                                            <label class="text-xs font-bold uppercase tracking-wider text-text-sub"
+                                                for="message">Message</label>
+                                            <textarea
+                                                class="w-full rounded-xl border-gray-200 bg-gray-50 px-4 py-3 text-sm focus:border-primary focus:ring-primary"
+                                                id="message" placeholder="How can I help you?" rows="4"></textarea>
+                                        </div>
+                                        <button
+                                            class="mt-2 btn-bounce flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-text-main shadow-md hover:shadow-lg"
+                                            type="button">
+                                            Send Message <span class="material-symbols-outlined text-sm">send</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="border-t border-gray-100 bg-white py-12">
+            <div class="mx-auto flex max-w-[960px] flex-col items-center justify-between gap-6 px-4 md:flex-row">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">terminal</span>
+                    <span class="font-bold">DevName</span>
+                </div>
+                <div class="flex gap-6">
+                    <a class="text-sm text-text-sub hover:text-primary transition-colors" href="#">Twitter</a>
+                    <a class="text-sm text-text-sub hover:text-primary transition-colors" href="#">GitHub</a>
+                    <a class="text-sm text-text-sub hover:text-primary transition-colors" href="#">LinkedIn</a>
+                </div>
+                <div class="text-sm text-text-sub">
+                    © 2025 HSpotlight. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
